@@ -205,6 +205,8 @@ class OWBaseWidget(QDialog, OWComponent, Report, ProgressBarMixin,
         WidgetMessagesMixin.__init__(self)
         WidgetSignalsMixin.__init__(self)
 
+        self.setWindowFlags(Qt.NoDropShadowWindowHint)
+
         stored_settings = kwargs.get('stored_settings', None)
         if self.settingsHandler:
             self.settingsHandler.initialize(self, stored_settings)
